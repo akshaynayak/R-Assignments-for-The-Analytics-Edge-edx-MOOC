@@ -1,0 +1,6 @@
+set.seed(144)
+split<-sample.split(loans,SplitRatio=0.7)
+train<-subset(loans,split==TRUE)
+test<-subset(loans,split==FALSE)
+loanlog<-glm(not.fully.paid~.,data=loans,family=binomial)
+summary(loanlog)

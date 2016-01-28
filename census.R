@@ -1,0 +1,6 @@
+set.seed(2000)
+spl<-sample.split(census$over50k,SplitRatio=0.6)
+train<-subset(census,spl=TRUE)
+test<-subset(census,spl=FALSE)
+censuslog<-glm(over50k~.,data=train,family=binomial)
+summary(censuslog)
